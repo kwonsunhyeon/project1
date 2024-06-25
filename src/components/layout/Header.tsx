@@ -1,22 +1,52 @@
-import './Header.css'
+import "./Header.jss"
+import Tabs from "@mui/material/Tabs";
+import Tab from "@mui/material/Tab";
+import React from "react";
+import { Box } from "@mui/material";
+import { styled } from "@mui/material/styles";
 
-const Header = () => {
-  return(
-    <header>
-      <div>
-        회사 로고
-      </div>
+const StyledBox = styled(Box)({
+  width: "1720px",
+  height: "60px",
+  backgroundColor: "#ffffffaa",
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  margin: '0 auto',
+});
 
-      <div>
-        <ul>
-          <li><a href="#">회사소개</a></li>
-          <li><a href="#">시공사례</a></li>
-          <li><a href="#">시공상담</a></li>
-          <li><a href="#">시공후기</a></li>
-        </ul>
-      </div>
-    </header>
-  )
+const StyledTab = styled(Tab)({
+  color: "black",
+  padding: "0",
+  fontSize: "16px",
+  marginLeft: "60px",
+  marginRight: "60px",
+  display: 'flex',
+  alignItems: 'center',
+});
+
+
+export function Header() {
+  const [value, setValue] = React.useState(0);
+
+  const handleChange = (event: React.SyntheticEvent, newValue: number) => {
+    setValue(newValue);
+  };
+
+  return (
+    <StyledBox>
+      <Tabs
+        value={value}
+        onChange={handleChange}
+        centered
+      >
+        <StyledTab label="회사소개" />
+        <StyledTab label="시공사례" />
+        <StyledTab label="시공상담" />
+        <StyledTab label="고객후기" />
+      </Tabs>
+    </StyledBox>
+  );
 }
 
 export default Header;

@@ -1,9 +1,10 @@
 import Layout from "./components/layout/Layout";
+import Content from "./components/layout/Content";
 
 const App = () => {
   return(
     <Layout>
-      <h1>테스트</h1>
+      <Content />
     </Layout>
   )
 }
