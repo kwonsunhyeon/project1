@@ -1,4 +1,3 @@
-import "./Header.jss"
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import React from "react";
@@ -9,10 +8,11 @@ const StyledBox = styled(Box)({
   width: "1720px",
   height: "60px",
   backgroundColor: "#ffffffaa",
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
-  margin: '0 auto',
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  margin: "0 auto",
+  // boxShadow: "2px 5px 3px #e5e5e5",
 });
 
 const StyledTab = styled(Tab)({
@@ -21,10 +21,9 @@ const StyledTab = styled(Tab)({
   fontSize: "16px",
   marginLeft: "60px",
   marginRight: "60px",
-  display: 'flex',
-  alignItems: 'center',
+  display: "flex",
+  alignItems: "center",
 });
-
 
 export function Header() {
   const [value, setValue] = React.useState(0);
@@ -35,11 +34,7 @@ export function Header() {
 
   return (
     <StyledBox>
-      <Tabs
-        value={value}
-        onChange={handleChange}
-        centered
-      >
+      <Tabs value={value} onChange={handleChange} centered>
         <StyledTab label="회사소개" />
         <StyledTab label="시공사례" />
         <StyledTab label="시공상담" />
